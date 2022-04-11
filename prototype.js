@@ -1,8 +1,19 @@
 function Poem({authorFromInternet, yearFromInternet, titleFromInternet, textFromInternet}){
-    this.author = authorFromInternet,
-    this.year = yearFromInternet,
-    this.title = titleFromInternet,
-    this.text = textFromInternet
+    this.author = authorFromInternet;
+    this.year = yearFromInternet;
+    this.title = titleFromInternet;
+    this.text = textFromInternet;
+    this.makePage = function () {
+        console.log(`
+            Title:${this.title}
+
+            Author:${this.author}
+
+            ${this.text}   
+            ${this.year}
+
+        `)
+    }
 }
 
 const poemData={
@@ -18,8 +29,10 @@ Poem.prototype.lang = "hungarian"
 const andrasFavoritePoem = new Poem(poemData)
 
 
-console.log(andrasFavoritePoem.__proto__)
-console.log(Poem.prototype)
+/* console.log(andrasFavoritePoem.__proto__)
+console.log(Poem.prototype) */
+
+poemData.makePage()
 
 
 
